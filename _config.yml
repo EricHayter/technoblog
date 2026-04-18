@@ -21,6 +21,8 @@ repository: "" # for github-metadata
 
 permalink: pretty
 
+remote_theme: just-the-docs/just-the-docs
+
 defaults:
   - scope:
       path: "docs" # an empty string here means all files in the project
@@ -188,6 +190,7 @@ callouts:
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-github-metadata
   - jekyll-include-cache
