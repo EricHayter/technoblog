@@ -1,102 +1,126 @@
-<p align="right">
-    <a href="https://badge.fury.io/rb/just-the-docs"><img src="https://badge.fury.io/rb/just-the-docs.svg" alt="Gem version"></a> <a href="https://github.com/just-the-docs/just-the-docs/actions/workflows/ci.yml"><img src="https://github.com/just-the-docs/just-the-docs/actions/workflows/ci.yml/badge.svg" alt="CI Build status"></a> <a href="https://app.netlify.com/sites/just-the-docs/deploys"><img src="https://api.netlify.com/api/v1/badges/9dc0386d-c2a4-4077-ad83-f02c33a6c0ca/deploy-status" alt="Netlify Status"></a>
-</p>
-<br><br>
-<p align="center">
-    <h1 align="center">Just the Docs</h1>
-    <p align="center">A modern, highly customizable, and responsive Jekyll theme for documentation with built-in search.<br>Easily hosted on GitHub Pages with few dependencies.</p>
-    <p align="center"><strong><a href="https://just-the-docs.com/">See it in action!</a></strong></p>
-    <br><br><br>
-</p>
+# Techno Blog Theme
 
-<p align="center">A video walkthrough of various Just the Docs features</p>
+A minimal, modern Jekyll theme for technical blogs and documentation with a dark aesthetic. Built as a fork of [Just the Docs](https://github.com/just-the-docs/just-the-docs) with a complete visual overhaul focused on readability and a clean, technical look.
 
-https://user-images.githubusercontent.com/85418632/211225192-7e5d1116-2f4f-4305-bb9b-437fe47df071.mp4
+![Theme Preview](assets/images/theme-preview.png)
+
+## Features
+
+- **Deep Black Design** - Pure black (#000000) background with comfortable contrast
+- **Technical Typography** - Geist Mono font throughout for a consistent monospace aesthetic
+- **Minimal Borders** - Clean, subtle borders that define spaces without overwhelming
+- **Optimized Readability** - Reduced font sizes and carefully chosen gray tones to reduce eye strain
+- **High Contrast Elements** - Buttons and interactive elements with clear visibility
+- **Built-in Search** - Inherited from Just the Docs
+- **Responsive Design** - Mobile-first approach
+- **Easy Customization** - Simple SCSS variables for colors and spacing
 
 ## Installation
 
-### Use the template
+### Local Development
 
-The [Just the Docs Template] provides the simplest, quickest, and easiest way to create a new website that uses the Just the Docs theme. To get started with creating a site, just click "[use the template]"!
-
-Note: To use the theme, you do ***not*** need to clone or fork the [Just the Docs repo]! You should do that only if you intend to browse the theme docs locally, contribute to the development of the theme, or develop a new theme based on Just the Docs.
-
-You can easily set the site created by the template to be published on [GitHub Pages] – the [template README] file explains how to do that, along with other details.
-
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^2] And you will be able to deploy your local build to a different platform than GitHub Pages.
-
-More specifically, the created site:
-
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
-
-Other than that, you're free to customize sites that you create with the template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-### Use as a Ruby Gem
-
-Alternatively, you can install the theme as a Ruby Gem, without creating a new site.
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "just-the-docs"
+1. Clone this repository:
+```bash
+git clone <your-repo-url>
+cd technoblog
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+2. Install dependencies:
+```bash
+bundle install
+```
+
+3. Serve the site locally:
+```bash
+bundle exec jekyll serve
+```
+
+4. Open your browser to `http://localhost:4000`
+
+### GitHub Pages
+
+1. Fork this repository
+2. Enable GitHub Pages in repository settings
+3. Choose the branch to deploy (usually `master` or `main`)
+4. Your site will be published at `https://<username>.github.io/<repository-name>`
+
+## Customization
+
+### Color Scheme
+
+The color scheme is defined in `_sass/color_schemes/techno.scss`. Key colors:
+
+```scss
+$body-background-color: #000000;  // Pure black background
+$body-text-color: #c0c0c0;        // Soft gray text
+$body-heading-color: #e8e8e8;     // Light gray headings
+$link-color: #6b9bd1;             // Muted blue links
+$border-color: #1a1a1a;           // Subtle borders
+```
+
+### Typography
+
+Font settings are in `_sass/custom/setup.scss` and `_sass/custom/custom.scss`:
+
+```scss
+$body-font-family: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+```
+
+The base font size is set to 14px for a more compact, technical feel.
+
+### Configuration
+
+Edit `_config.yml` to update:
+- Site title and description
+- Navigation settings
+- Search configuration
+- Theme settings
+
+## Creating Content
+
+### Pages
+
+Create markdown files in the root or `docs/` directory:
+
+```markdown
+---
+title: Your Page Title
+layout: default
+nav_order: 1
+---
+
+# Your Content Here
+```
+
+### Navigation
+
+Control navigation order with front matter:
 
 ```yaml
-theme: just-the-docs
+nav_order: 1
+parent: Parent Page Name  # For nested pages
 ```
 
-And then install all relevant dependencies:
+## Design Philosophy
 
-```shell
-$ bundle
-```
+This theme prioritizes:
 
-## Usage
+1. **Minimal Distraction** - Dark background keeps focus on content
+2. **Technical Aesthetic** - Monospace fonts and clean lines
+3. **Easy on the Eyes** - Reduced contrast to prevent eye strain during long reading sessions
+4. **Fast Loading** - Few dependencies, no build scripts
+5. **Content First** - Simple design that makes your content shine
 
-[View the documentation][Just the Docs] for usage information.
+## Credits
 
-## Contributing
+This theme is built on top of [Just the Docs](https://github.com/just-the-docs/just-the-docs) by Patrick Marsceill and the Just the Docs contributors. The original theme provided the excellent foundation of navigation, search, and responsive layout.
 
-Bug reports, proposals of new features, and pull requests are welcome on GitHub at https://github.com/just-the-docs/just-the-docs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-### Submitting code changes:
-
-- Submit an [Issue](https://github.com/just-the-docs/just-the-docs/issues) that motivates the changes, using the appropriate template
-- Discuss the proposed changes with other users and the maintainers
-- Open a [Pull Request](https://github.com/just-the-docs/just-the-docs/pulls)
-- Ensure all CI tests pass
-- Provide instructions to check the effect of the changes
-- Await code review
-
-### Design and development principles of this theme:
-
-1. As few dependencies as possible
-2. No build script needed
-3. First class mobile experience
-4. Make the content shine
-
-## Development
-
-To set up your environment to develop this theme: fork this repo, then run `bundle install` from the root directory.
-
-Your theme is set up just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When this theme is released, only the files in `_layouts`, `_includes`, and `_sass` tracked with Git will be included in the gem.
+The Techno theme modifications focus on visual design, typography, and dark mode optimization.
 
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[^2]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+## Contributing
 
-[Jekyll]: https://jekyllrb.com
-[Just the Docs Template]: https://just-the-docs.github.io/just-the-docs-template/
-[Just the Docs]: https://just-the-docs.com
-[Just the Docs repo]: https://github.com/just-the-docs/just-the-docs
-[GitHub Pages]: https://pages.github.com/
-[Template README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
+Issues and pull requests are welcome! If you find bugs or have suggestions for improvements, please open an issue.
