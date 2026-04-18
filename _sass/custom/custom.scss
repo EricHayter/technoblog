@@ -141,11 +141,35 @@ table {
   }
 }
 
-// Active navigation indicator - solid color, no gradient
-.site-nav .nav-list-item > a.active::before,
-.site-nav .nav-list-item > a.active::after {
-  background-image: none !important;
-  background-color: #2a2a2a !important;
+// Navigation items - solid colors, no gradients
+.site-nav {
+  // Remove gradients from all navigation links
+  .nav-list-link {
+    &:hover,
+    &.active {
+      background-image: none !important;
+      background-color: #2a2a2a !important;
+    }
+  }
+
+  // Remove gradients from expander buttons
+  .nav-list-expander {
+    &:hover {
+      background-image: none !important;
+      background-color: #2a2a2a !important;
+    }
+  }
+
+  // All nav list items
+  .nav-list-item {
+    > a {
+      &:hover,
+      &.active {
+        background-image: none !important;
+        background-color: #2a2a2a !important;
+      }
+    }
+  }
 }
 
 // Fix all potential visibility issues

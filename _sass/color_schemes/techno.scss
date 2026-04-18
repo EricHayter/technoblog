@@ -49,3 +49,6 @@ $label-blue: #6b9bd1;
 $label-purple: #b8a6e8;
 $label-yellow: #d4a136;
 $label-red: #d66b6b;
+
+// Import accessible dark syntax highlighting
+@import "./vendor/accessible-pygments/github-dark";
